@@ -18,7 +18,7 @@ Magic.
 $ ok
 ```
 
-List any commands you've added, with an explanation of what they do.
+List any commands you've added.
 
 ```
 $ ok {foo}

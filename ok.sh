@@ -7,11 +7,10 @@ then
     if [ -d "${okdir}" ] # if .ok dir exists
     then
         echo -e "\n$(tput setaf 2)Okay!$(tput sgr0)"
-        echo -e "Showing available commands:"
+        echo -e "Showing available commands:\n"
         for cmd in ${okdir}/*
         do
-            echo -e "\n$ $(tput setaf 6)ok $(basename "${cmd}" .sh)$(tput sgr0)"
-            cat ${cmd}
+            echo -e "$(tput setaf 6)$(basename "${cmd}" .sh)$(tput sgr0)"
         done
         exit 0
     else # if .ok dir doesn't exist
