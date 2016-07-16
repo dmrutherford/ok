@@ -40,7 +40,7 @@ else # if arguments supplied
             if [ -f "${okdir}/${1}.sh" ] # if the argument matches a command
             then
                 echo -e "\n$(tput setaf 2)Okay!$(tput sgr0)"
-                echo -e "I'm $(tput setaf 6)${1}$(tput sgr0)ing.\n"
+                echo -e "I'll $(tput setaf 6)${1}$(tput sgr0).\n"
                 $SHELL "${okdir}/${1}.sh"
                 exit 0
             else
@@ -71,11 +71,12 @@ else # if arguments supplied
                 else # if the first argument is the remove command
                     if [ -f "${okdir}/${2}.sh" ] # if the second argument is an extant command
                     then
+                        echo -e "\n$(tput setaf 3)Really?$(tput sgr0)"
                         read -p "Remove the $(tput setaf 6)${2}$(tput sgr0) command? [y/N] " -r
                         if [[ $REPLY =~ ^[Yy]$ ]] # if the user really wants to remove the command
                         then
                             echo -e "\n$(tput setaf 2)Okay!$(tput sgr0)"
-                            echo -e "I'm removing the $(tput setaf 6)${2}$(tput sgr0) command."
+                            echo -e "I'll remove the $(tput setaf 6)${2}$(tput sgr0) command."
                             rm -f "${okdir}/${2}.sh"
                             if [ ! "$(ls -A ${okdir})" ] # if there are no other commands saved
                             then
