@@ -8,7 +8,7 @@ then
     then
         echo -e "\n$(tput setaf 2)Okay!$(tput sgr0)"
         echo -e "Showing available commands:\n"
-        for cmd in ${okdir}/*
+        for cmd in "${okdir}"/*
         do
             echo -e "$(tput setaf 6)$(basename "${cmd}" .sh)$(tput sgr0)"
         done
